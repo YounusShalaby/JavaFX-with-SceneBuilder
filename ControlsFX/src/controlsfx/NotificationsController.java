@@ -44,10 +44,10 @@ public class NotificationsController implements Initializable {
 
             Image img = new Image("true.png");
 
-            Notifications noti = Notifications.create()
+            Notifications notification = Notifications.create()
                     .title("This is Sample Notification")
                     .text("this is sample info")
-                    .graphic(new ImageView(img)) // or null
+                    .graphic(new ImageView(img)) // OR(1) null
                     .hideAfter(Duration.seconds(5))
                     .position(Pos.TOP_RIGHT)
                     .onAction(new EventHandler<ActionEvent>() {
@@ -58,11 +58,12 @@ public class NotificationsController implements Initializable {
                         }
                     });
 
-            //noti.darkStyle();
+            notification.darkStyle();
+            
             Platform.runLater(new Runnable() {
                 @Override
                 public void run() {
-                    noti.show(); // or noti.showInformation();
+                    notification.show(); // OR(1) noti.showInformation();
                 }
             });
 
