@@ -63,7 +63,7 @@ public class NotificationsController implements Initializable {
             Platform.runLater(new Runnable() {
                 @Override
                 public void run() {
-                    notification.show(); // OR(1) noti.showInformation();
+                    notification.show(); // OR(1) notification.showInformation();
                 }
             });
 
